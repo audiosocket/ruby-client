@@ -1,0 +1,6 @@
+gem "configlet",   "~> 1.2"
+gem "rest-client", "~> 1.5"
+
+env :development do
+  gem "minitest", "~> 1.6"
+end
