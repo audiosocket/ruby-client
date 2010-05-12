@@ -4,7 +4,7 @@
 
 == Description
 
-FIX (describe your package)
+Access to Audiosocket's music and media management API.
 
 == Examples
 
