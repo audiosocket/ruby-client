@@ -1,8 +1,10 @@
+require "isolate/now"
 require "minitest/autorun"
 require "audiosocket"
 
 class TestAudiosocket < MiniTest::Unit::TestCase
-  def test_sanity
-    flunk "write tests or I will kneecap you"
+  def test_self_config_defaults
+    assert_equal "no-token-provided", Audiosocket[:token]
+    assert_equal URI.parse("http://audiosocket.com/api/v3"), Audiosocket[:url]
   end
 end
