@@ -17,8 +17,6 @@ module Audiosocket
     if params[:url].include? self[:url]
       req["X-Audiosocket-Token"] = self[:token]
     end
-
-    p :req => req, :params => params
   end
 
   def self.delete url, headers = {}, &block
