@@ -1,5 +1,6 @@
 require "hoe"
 
+Hoe.plugins.delete :rubyforge
 Hoe.plugin :doofus, :git, :isolate
 
 Hoe.spec "audiosocket" do
