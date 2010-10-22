@@ -1,4 +1,4 @@
-gem "configlet",   "~> 1.2"
+gem "configlet",   "~> 2.0"
 gem "rest-client", "~> 1.5"
 
 env :development do
