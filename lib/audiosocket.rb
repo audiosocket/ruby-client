@@ -6,7 +6,7 @@ module Audiosocket
 
   # Duh.
 
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 
   config :audiosocket do
     default :token => "no-token-provided"
