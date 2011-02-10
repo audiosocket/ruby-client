@@ -10,7 +10,7 @@ module Audiosocket
 
   config :audiosocket do
     default :token => "no-token-provided"
-    url     :url   => "http://audiosocket.com/api/v3"
+    default :url   => "http://audiosocket.com/api/v3"
   end
 
   RestClient.add_before_execution_proc do |req, params|
