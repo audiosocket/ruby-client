@@ -1,8 +1,0 @@
-.autotest
-CHANGELOG.rdoc
-Isolate
-Manifest.txt
-README.rdoc
-Rakefile
-lib/audiosocket.rb
-test/test_audiosocket.rb

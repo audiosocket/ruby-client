@@ -1,22 +1,10 @@
-= Audiosocket Ruby Client
+# Audiosocket Ruby Client
 
-* http://github.com/audiosocket/ruby-client
+An authentication client for Audiosocket's music discovery and licensing API.
 
-== Description
+## License (MIT)
 
-Access to Audiosocket's music and media management API.
-
-== Examples
-
-    FIX (code sample of usage)
-
-== Installation
-
-    $ gem install audiosocket
-
-== License
-
-Copyright 2010 Audiosocket (it@audiosocket.com)
+Copyright 2010-2011 Audiosocket (it@audiosocket.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
