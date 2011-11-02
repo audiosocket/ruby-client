@@ -37,10 +37,8 @@ module Audiosocket
     # JSON.
 
     def handle res
-      body = res.body
-
       case res.status
-      when 200..299, 422 then JSON.parse body
+      when 200..299, 422 then JSON.parse res.body
       when 404 then nil
       else raise "#{res.status}: #{res.body}"
       end
