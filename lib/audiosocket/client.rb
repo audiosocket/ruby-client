@@ -58,6 +58,10 @@ module Audiosocket
       handle @conn.put *args, &block
     end
 
+    def to_s
+      "#<Audiosocket::Client #{url}>"
+    end
+
     # Create a temporary token for the client's current token/uid
     # credentials.
 
