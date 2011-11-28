@@ -1,3 +1,4 @@
+require "audiosocket/errors"
 require "faraday"
 require "json"
 
@@ -40,6 +41,7 @@ module Audiosocket
       case res.status
       when 200..299, 422 then JSON.parse res.body
       when 404 then nil
+      when 401 then raise Audiosocket::Unauthorized
       else raise "#{res.status}: #{res.body}"
       end
     end
