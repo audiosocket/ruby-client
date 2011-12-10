@@ -4,7 +4,7 @@ An authentication client for Audiosocket's music discovery and licensing API.
 
 ## License (MIT)
 
-Copyright 2010-2011 Audiosocket (it@audiosocket.com)
+Copyright 2010-2011 Audiosocket (tech@audiosocket.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

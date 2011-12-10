@@ -3,7 +3,7 @@ require "audiosocket/version"
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Audiosocket"]
-  gem.email         = ["it@audiosocket.com"]
+  gem.email         = ["tech@audiosocket.com"]
   gem.description   = "An authentication client for the Audiosocket API."
   gem.summary       = "Helps authenticate users and generate Audiosocket API tokens."
 
