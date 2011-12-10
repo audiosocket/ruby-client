@@ -15,5 +15,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- test/*`.split "\n"
   gem.version       = Audiosocket::VERSION
 
+  gem.required_ruby_version = ">= 1.9.2"
+
   gem.add_dependency "faraday", "~> 0.7"
 end
