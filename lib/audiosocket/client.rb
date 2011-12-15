@@ -54,8 +54,8 @@ module Audiosocket
 
     # Send a PUT to the API, handling the response.
 
-    def put *args, &block
-      handle @conn.put *args, &block
+    def put *args
+      handle @conn.put *args
     end
 
     def to_s
