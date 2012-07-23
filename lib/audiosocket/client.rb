@@ -1,6 +1,6 @@
 require "audiosocket/errors"
 require "faraday"
-require "json"
+require "faraday_middleware"
 
 module Audiosocket
   class Client
@@ -9,11 +9,10 @@ module Audiosocket
 
     def initialize options = {}
       @url = options[:url] || "https://api.audiosocket.com/v5"
-      
-        
+
       @conn = Faraday.new url: @url do |f|
-        f.use Faraday::Request::JSON
-        f.use Faraday::Adapter::NetHttp
+        f.request :json
+        f.adapter Faraday.default_adapter
       end
 
       @conn.headers["X-Audiosocket-Token"] =
