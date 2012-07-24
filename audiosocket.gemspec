@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.name          = "audiosocket"
   gem.require_paths = ["lib"]
   gem.test_files    = `git ls-files -- test/*`.split "\n"
-  gem.version       = "0.3.1"
+  gem.version       = "0.3.2"
 
   gem.required_ruby_version = ">= 1.9.2"
 
