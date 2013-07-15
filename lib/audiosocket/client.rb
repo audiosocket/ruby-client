@@ -26,25 +26,32 @@ module Audiosocket
         post("auth/#{email_or_token}")
     end
 
-    # Send a GET to the API, handling the response.
-
-    def get *args, &block
-      handle @conn.get *args, &block
-    end
-
     # Handle and transform Faraday's response. `404` responses return
     # `nil`. Responses from `200` to `299` and `422` parse the body as
     # JSON.
 
-    def handle res
+    def handle res, parse=true
       case res.status
-      when 200..299, 422 then JSON.parse res.body
+      when 200..299, 422 then JSON.parse res.body if parse
       when 401, 403      then raise Audiosocket::Unauthorized
       when 404           then nil
 
       else
         raise "Unexpected response (#{res.status}) from the API:\n#{res.body}"
       end
+    end
+
+    # Send a GET to the API, handling the response.
+
+    def get *args, &block
+      handle @conn.get *args, &block
+    end
+
+    # Send a DELETE to the API, handling the response.
+
+    def delete *args, &block
+      res = @conn.delete *args, &block
+      handle res, false
     end
 
     # Send a POST to the API, handling the response.
@@ -55,8 +62,8 @@ module Audiosocket
 
     # Send a PUT to the API, handling the response.
 
-    def put *args
-      handle @conn.put *args
+    def put *args, &block
+      handle @conn.put *args, &block
     end
 
     def to_s
