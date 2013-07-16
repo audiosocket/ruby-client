@@ -30,7 +30,9 @@ module Audiosocket
     # `nil`. Responses from `200` to `299` and `422` parse the body as
     # JSON.
 
-    def handle res, parse=true
+    def handle res, opts = {}
+      parse = opts.has_key?(:parse) ? opts[:parse] : true
+
       case res.status
       when 200..299, 422 then JSON.parse res.body if parse
       when 401, 403      then raise Audiosocket::Unauthorized
@@ -51,7 +53,7 @@ module Audiosocket
 
     def delete *args, &block
       res = @conn.delete *args, &block
-      handle res, false
+      handle res, parse: false
     end
 
     # Send a POST to the API, handling the response.
