@@ -31,6 +31,8 @@ module Audiosocket
     # JSON.
 
     def handle res, opts = {}
+      @response = res
+
       parse = opts.has_key?(:parse) ? opts[:parse] : true
 
       case res.status
@@ -41,6 +43,12 @@ module Audiosocket
       else
         raise "Unexpected response (#{res.status}) from the API:\n#{res.body}"
       end
+    end
+
+    # Returns the status of the latest response, if it exists.
+
+    def status
+      @response && @response.status
     end
 
     # Send a GET to the API, handling the response.
