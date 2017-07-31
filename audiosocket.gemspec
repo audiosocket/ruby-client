@@ -10,11 +10,11 @@ Gem::Specification.new do |gem|
   gem.name          = "audiosocket"
   gem.require_paths = ["lib"]
   gem.test_files    = `git ls-files -- test/*`.split "\n"
-  gem.version       = "0.3.4"
+  gem.version       = "0.3.5"
 
   gem.required_ruby_version = ">= 1.9.2"
 
-  gem.add_dependency "faraday", "~> 0.8"
-  gem.add_dependency "faraday_middleware", "~> 0.8"
+  gem.add_dependency "faraday", "~> 0.12.2"
+  gem.add_dependency "faraday_middleware", "~> 0.12.0"
 
 end
