@@ -11,6 +11,7 @@ module Audiosocket
       @url = options[:url] || "https://api.audiosocket.com/v5"
 
       @conn = Faraday.new url: @url do |f|
+        f.reuse_ssl_sessions = false
         f.request :json
         f.adapter Faraday.default_adapter
       end
